@@ -19,7 +19,7 @@ const AddWidgetForm = ({ categoryId, addWidget }) => {
 	return (
 		<form
 			onSubmit={handleSubmit}
-			className="bg-[#fefefe] shadow-md rounded-[10px] p-4 ">
+			className="bg-[#fefefe] shadow-md rounded-[10px] p-4 h-64">
 			{/* <div className="mb-2">
         <input
           type="text"

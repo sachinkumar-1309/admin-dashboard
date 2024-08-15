@@ -13,6 +13,11 @@
 					"id": "risk-assessment",
 					"name": "Cloud Account Risk Assessment",
 					"content": "Random text for Cloud Account Risk Assessment"
+				},
+				{
+					"id": "risk-assessment2",
+					"name": "Cloud Account Risk Assessment Two",
+					"content": "Random text for Cloud Account Risk Assessment"
 				}
 			]
 		},
