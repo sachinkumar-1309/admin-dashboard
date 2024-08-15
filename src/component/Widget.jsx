@@ -7,9 +7,9 @@ const Widget = ({ categoryId, widget, removeWidget }) => {
       <p>{widget.text}</p>
       <button
         onClick={() => removeWidget(categoryId, widget.id)}
-        className="text-red-900 mt-2 absolute top-2 right-2 bg-slate-200 px-2 rounded-full font-bold"
+        className="text-[#86b3ff] mt-2 absolute top-1 right-2 00 px-2 rounded-full font-bold text-2xl"
       >
-        X
+        ⨯
       </button>
     </div>
   );
