@@ -1,5 +1,23 @@
 import React from "react";
-import { Doughnut } from "react-chartjs-2";
+import {
+	Chart as ChartJS,
+	ArcElement,
+	Tooltip,
+	Legend,
+	CategoryScale,
+	LinearScale,
+	BarElement,
+} from "chart.js";
+import { Doughnut, Bar } from "react-chartjs-2";
+
+ChartJS.register(
+	ArcElement,
+	Tooltip,
+	Legend,
+	CategoryScale,
+	LinearScale,
+	BarElement
+);
 
 const Widget = ({ categoryId, widget, removeWidget }) => {
 	const hasData = widget.chartData && widget.chartData.labels;
@@ -20,6 +38,17 @@ const Widget = ({ categoryId, widget, removeWidget }) => {
 				backgroundColor: widget?.chartData?.datasets[0]?.backgroundColor,
 			},
 		],
+	};
+
+	const barchartData = {
+		labels: [""], // Single label for the progress bar style
+		datasets: widget.chartData.labels.map((label, index) => ({
+			label: `${label} (${widget.chartData.datasets[0].data[index]})`,
+			data: [widget.chartData.datasets[0].data[index]],
+			backgroundColor: widget.chartData.datasets[0].backgroundColor[index],
+			borderRadius: 20,
+			barThickness: 20, // Set the thickness of the bar
+		})),
 	};
 
 	const chartOptions = {
@@ -48,9 +77,65 @@ const Widget = ({ categoryId, widget, removeWidget }) => {
 				bottom: 20,
 			},
 		},
-		cutout: "60%", 
+		cutout: "60%",
 		rotation: -90,
 		circumference: 360,
+	};
+	// const barOptions = {
+	// 	indexAxis: "y", // Horizontal bar chart
+	// 	responsive: true,
+	// 	maintainAspectRatio: false,
+	// 	plugins: {
+	// 		legend: {
+	// 			display: false, // Hide legend for bar chart
+	// 		},
+	// 		tooltip: {
+	// 			enabled: true,
+	// 		},
+	// 	},
+	// 	layout: {
+	// 		padding: {
+	// 			right: 20,
+	// 			bottom: 20,
+	// 		},
+	// 	},
+	// };
+	const barOptions = {
+		indexAxis: "y",
+		responsive: true,
+		maintainAspectRatio: false,
+		scales: {
+			x: {
+				stacked: true,
+				beginAtZero: true,
+				display: false, // Hide y-axis
+				grid: {
+					display: false, // Remove grid lines
+				},
+			},
+			y: {
+				stacked: true,
+				display: false, // Hide y-axis
+				grid: {
+					display: false, // Remove grid lines
+				},
+			},
+		},
+		plugins: {
+			legend: {
+				display: true,
+				position: "bottom",
+			},
+			tooltip: {
+				enabled: true,
+			},
+		},
+		layout: {
+			padding: {
+				right: 20,
+				bottom: 20,
+			},
+		},
 	};
 
 	return (
@@ -62,7 +147,12 @@ const Widget = ({ categoryId, widget, removeWidget }) => {
 
 			{widget && hasData && (
 				<div className=" w-full chartcontainer">
-					<Doughnut data={chartData} options={chartOptions} />
+					{/* Conditionally render the correct chart type */}
+					{widget.id === "image-risk" || widget.id === "image-security" ? (
+						<Bar data={barchartData} options={barOptions} /> // Render Bar chart for specific widgets
+					) : (
+						<Doughnut data={chartData} options={chartOptions} /> // Render Doughnut chart by default
+					)}
 				</div>
 			)}
 			<button
