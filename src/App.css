@@ -1,0 +1,10 @@
+.chart-container {
+	width: 200px; /* Desired width */
+	height: 200px; /* Desired height */
+	position: relative; /* Ensures the chart stays within the container */
+}
+
+.chart-container canvas {
+	max-width: 100%; /* Make sure the canvas respects container boundaries */
+	max-height: 100%;
+}

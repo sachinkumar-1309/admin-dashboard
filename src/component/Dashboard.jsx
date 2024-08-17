@@ -31,11 +31,13 @@ const Dashboard = () => {
 
 	return (
 		<div className="p-4 w-[90vw] mx-auto">
-            <h1 className="text-left text-2xl font-bold">CNAPP Dashboard</h1>
+			<h1 className="text-left text-2xl font-bold">CNAPP Dashboard</h1>
 			{categories.map((category) => (
 				<div key={category.id} className="mb-4 w-[85vw] mx-auto">
-					<h2 className="text-lg font-bold mb-2 text-left mt-3">{category.name}</h2>
-					<div className="grid grid-cols-3 gap-4 relative">
+					<h2 className="text-lg font-bold mb-2 text-left mt-3">
+						{category.name}
+					</h2>
+					<div className="grid xl:grid-cols-3 md:grid-cols-2 gap-4 relative">
 						{category.widgets.map((widget) => (
 							<Widget
 								key={widget.id}
