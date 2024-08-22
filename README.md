@@ -1,8 +1,8 @@
-#🛠️ Dashboard Widget Management
+# 🛠️ Dashboard Widget Management
 
 This project is a dynamic dashboard that allows users to manage widgets. Users can click on categories to display associated widgets, which are rendered conditionally based on the selected category.
 
-Features
+#### 🚀  Features
 
 Category Selection: Click on any category to view the associated widgets.
 Dynamic Rendering: Widgets are dynamically rendered based on the selected category.
@@ -17,14 +17,16 @@ Responsive Design: The UI is designed to be responsive and user-friendly.
 | `utils/`      | Utility functions such as `cn` (class name utility).       |
 | `data/`       | JSON data for categories and widgets.                      |
 
-Usage
+---
 
-Setting Up the Project:
+## Usage
+
+### 🛠️Setting Up the Project:
 
 Clone the repository:
 git clone [https://github.com/sachinkumar-1309/admin-dashboard.git](https://github.com/sachinkumar-1309/admin-dashboard.git)
 
-### Navigate into the project directory:
+#### Navigate into the project directory:
 
 cd dashboard-widget-management
 
@@ -36,12 +38,14 @@ npm install
 
 npm start
 
+---
+
 #### How It Works
 
 Toggle Category: When a user clicks on a category button, the toggle function is called, storing the clicked category's id in the state variable itemClicked.
 Display Widgets: The application maps through the categories and checks if itemClicked matches the id of the category. If it does, the corresponding widgets are displayed.
 
-## Example
+<!-- ## Example
 
 Here's a simple example of how the main logic works:
 
@@ -71,9 +75,9 @@ key={category.id} >
 </div>
 )}
 </>
-))}
+))} -->
 
-#### Dependencies
+#### 🔧  Dependencies
 
 React: JavaScript library for building user interfaces.
 Tailwind CSS: A utility-first CSS framework for rapid UI development.
