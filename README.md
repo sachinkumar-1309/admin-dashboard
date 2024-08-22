@@ -2,13 +2,13 @@
 
 This project is a dynamic dashboard that allows users to manage widgets. Users can click on categories to display associated widgets, which are rendered conditionally based on the selected category.
 
-#### 🚀  Features
+## 🚀  Features
 
 Category Selection: Click on any category to view the associated widgets.
 Dynamic Rendering: Widgets are dynamically rendered based on the selected category.
 Responsive Design: The UI is designed to be responsive and user-friendly.
 
-### 📂 Project Structure
+## 📂 Project Structure
 
 | Directory     | Description                                                |
 | ------------- | ---------------------------------------------------------- |
@@ -19,7 +19,7 @@ Responsive Design: The UI is designed to be responsive and user-friendly.
 
 ---
 
-## Usage
+## 📝 Usage
 
 ### 🛠️Setting Up the Project:
 
