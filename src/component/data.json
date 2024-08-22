@@ -62,7 +62,7 @@
 				{
 					"id": "namespace-alerts",
 					"name": "Top 5 Namespace Specific Alerts",
-					
+
 					"chartData": {
 						"labels": [
 							"Namespace 1",
@@ -88,7 +88,7 @@
 				{
 					"id": "workload-alerts",
 					"name": "Workload Alerts",
-					
+
 					"chartData": {
 						"labels": ["Critical", "High", "Medium", "Low"],
 						"datasets": [
@@ -113,13 +113,13 @@
 				{
 					"id": "image-risk",
 					"name": "Image Risk Assessment",
-					
+
 					"chartData": {
 						"labels": ["High", "Medium", "Low"],
 						"datasets": [
 							{
-								"data": [15, 25, 35],
-								"backgroundColor": ["#F87171", "#FBBF24", "#4ADE80"]
+								"data": [2, 25, 35],
+								"backgroundColor": ["#610000", "#c92a1c", "#ed9033"]
 							}
 						]
 					}
@@ -127,17 +127,18 @@
 				{
 					"id": "image-security",
 					"name": "Image Security Issues",
-					
+
 					"chartData": {
-						"labels": ["Critical", "High", "Medium", "Low"],
+						"labels": ["Critical", "High", "Medium", "Low", "no"],
 						"datasets": [
 							{
-								"data": [3, 8, 12, 22],
+								"data": [3, 8, 6, 11, 11],
 								"backgroundColor": [
-									"#F87171",
-									"#FBBF24",
-									"#5C8FF5",
-									"#4ADE80"
+									"#610000",
+									"#c92a1c",
+									"#ed9033",
+									"#f3c544",
+									"#a9a9a9"
 								]
 							}
 						]

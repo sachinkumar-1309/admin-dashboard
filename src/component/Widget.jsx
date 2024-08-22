@@ -41,13 +41,13 @@ const Widget = ({ categoryId, widget, removeWidget }) => {
 	};
 
 	const barchartData = {
-		labels: [""], // Single label for the progress bar style
-		datasets: widget.chartData.labels.map((label, index) => ({
+		labels: [""],
+		datasets: widget?.chartData?.labels?.map((label, index) => ({
 			label: `${label} (${widget.chartData.datasets[0].data[index]})`,
 			data: [widget.chartData.datasets[0].data[index]],
 			backgroundColor: widget.chartData.datasets[0].backgroundColor[index],
-			borderRadius: 20,
-			barThickness: 20, // Set the thickness of the bar
+			borderRadius:20,
+			barThickness: 15,
 		})),
 	};
 
@@ -81,25 +81,6 @@ const Widget = ({ categoryId, widget, removeWidget }) => {
 		rotation: -90,
 		circumference: 360,
 	};
-	// const barOptions = {
-	// 	indexAxis: "y", // Horizontal bar chart
-	// 	responsive: true,
-	// 	maintainAspectRatio: false,
-	// 	plugins: {
-	// 		legend: {
-	// 			display: false, // Hide legend for bar chart
-	// 		},
-	// 		tooltip: {
-	// 			enabled: true,
-	// 		},
-	// 	},
-	// 	layout: {
-	// 		padding: {
-	// 			right: 20,
-	// 			bottom: 20,
-	// 		},
-	// 	},
-	// };
 	const barOptions = {
 		indexAxis: "y",
 		responsive: true,
